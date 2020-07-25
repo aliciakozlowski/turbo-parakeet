@@ -1,0 +1,719 @@
+* {
+    font-family: "Montserrat", sans-serif;
+    box-sizing: border-box;
+}
+
+/********* Responsive Grid Sizing ***************/
+
+body {
+    margin-left: 4%;
+    margin-right: 4%;
+    background-color: #FFFFFF;
+}
+
+.col-1 { width: 8.33%; }
+.col-2 { width: 16.66%; }
+.col-3 { width: 25%; }
+.col-4 { width: 33.33%; }
+.col-5 { width: 41.66%; }
+.col-6 { width: 50%; }
+.col-7 { width: 58.33%; }
+.col-8 { width: 66.66%; }
+.col-9 { width: 75%; }
+.col-10 { width: 83.33%; }
+.col-11 { width: 91.66%; }
+.col-12 { width: 100%; }
+
+.row {
+    position: relative;
+    width: 100%;
+}
+
+.row [class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+
+.row:first-child {
+    padding-left: 0;
+}
+
+.row:last-child {
+    padding-right: 0;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+main {
+    clear: both;
+    margin: auto;
+}
+
+div {
+    padding: 0;
+}
+
+/*********** Header Styling ****************/
+
+header {
+    height: 3em;
+}
+
+.logo {
+    background-image: url(Images/logo-color.svg);
+    background-repeat: no-repeat;
+}
+
+.logo:hover {
+    background-image: url(Images/logo-line.svg);
+    background-repeat: no-repeat;
+}
+
+div.logo {
+    width: 5.5vw;
+    height: 5.5vw;
+    float: left;
+    margin: 1em;
+}
+
+nav {
+    float: right;
+}
+
+nav ul li{
+    list-style-type: none;
+    display:inline-block;
+    font-weight: 400;
+    font-size: 1vw;
+    padding: 1.45em;
+}
+
+/********** Link Styling ****************/
+
+a.navDark:link {
+    text-decoration: none;
+    color: #000000;
+}
+
+a.navDark:visited {
+    color: #000000;
+}
+
+a.navWhite:link {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+a.navWhite:visited{
+    text-decoration: none;
+    display:inline-block;
+    font-weight: 400;
+    font-size: 1vw;
+    color: #FFFFFF;
+}
+
+a.click:link {
+    text-decoration: underline;
+    color: #000000;
+}
+
+a.click:visited {
+    text-decoration: underline;
+    color: #F73959;
+}
+
+a.navDark:hover, a.click:hover, a.navWhite:hover{
+    color: #F73959;
+}
+
+a.navDark:active, a.click:active, a.navWhite:active{
+    color: #7AC7C3;
+}
+
+a.company:link, a.company:visited {
+    color: #F73959;
+    text-decoration: none;
+}
+
+a.company:hover {
+    color: #F73959;
+    text-decoration: underline;
+}
+
+a.company:active {
+    color: #7AC7C3;
+}
+
+a.overlay:link {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+a.overlay:visited {
+    text-decoration: none;
+}
+
+/************* Home Page Styling ******************/
+
+#home-text {
+    font-size: 8vw;
+    font-weight: 500;
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+#home-div {
+    margin-top: 7em;
+}
+
+.text_1, .text_2, .text_3 {
+    font-size: 8vw;
+    font-weight: 500;
+    color: #FFCECE;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    animation-timing-function: steps(18, end);
+    animation-duration: 18s;
+    animation-iteration-count: infinite;
+}
+
+.text_1 {
+    animation-name: text1;
+}
+
+.text_2 {
+    animation-name: text2;
+    left: -5px;
+}
+
+.text_3 {
+    animation-name: text3;
+    left: -18px;
+}
+
+.text_1::after, .text_2::after, .text_3::after{
+    content: "|";
+    position: absolute;
+    right: -10px;
+    animation-name: caret;
+    animation-duration: .75s;
+    animation-timing-function: steps(1, end);
+    animation-iteration-count: infinite;
+}
+
+@keyframes text1 {
+    0%, 33%, 66%, 100% {
+        width: 0;
+    }
+    10%, 22% {
+        width: 9.2em;
+    }
+}
+
+@keyframes text2 {
+    0%, 33%, 66%, 100% {
+        width: 0;
+    }
+    43%, 55% {
+        width: 10em;
+    }
+}
+
+@keyframes text3 {
+    0%, 33%, 66%, 100% {
+        width: 0;
+    }
+    76%, 88% {
+        width: 9.05em;
+    }
+}
+
+@keyframes caret {
+    0%, 100% {
+        opacity: 0;
+    }
+    20%, 80% {
+        opacity: 1;
+    }
+}
+
+body.home {
+    background-color: #353535;
+    color: #FFFFFF; 
+}
+
+#index {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 18vw;
+    text-align: center;
+    font-size: 1vw;
+}
+
+.downArrow {
+    border: solid #FFFFFF;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 10px;
+    transform: rotate(45deg);
+    z-index: -1;
+}
+
+.downArrow:hover {
+    border-color: #F73959;
+}
+
+.downArrow:active {
+    border-color: #7AC7C3;
+}
+
+/******************** Text/Font Styling *********************/
+
+.page-title {
+    font-size: 7.75vw;
+    font-weight: 300;
+}
+
+.page-title::after {
+    content: "|";
+    position: absolute;
+    display: inline;
+    margin: 0px .35em;
+}
+
+#title-subtext-resume {
+    margin: 7.8vw 0;
+}
+
+#title-subtext-work {
+    margin: 7vw 0;
+}
+
+.page-title-other {
+    font-size: 7.75vw;
+    font-weight: 300;
+}
+
+h2 {
+    font-size: 2.5vw;
+    font-weight: 500;
+    margin: 2vw 0;
+}
+
+h3 {
+    color: #F73859;
+    font-size: 2vw;
+    font-weight: 600;
+    padding: 0;
+    margin: 1vw 0;
+}
+
+th {
+    color: #F73859;
+    font-size: 2vw;
+    font-weight: 600;
+    padding: 0;
+    margin: 1vw 0;
+    text-align: left;
+}
+
+td.resume {
+    font-weight: 400;
+    font-size: 1.4vw;
+    list-style-type: none;
+    text-align: left;
+    margin: 0;
+    line-height: 1.55;
+    padding: 0 6vw 0 0;
+}
+
+caption {
+    font-size: 2.5vw;
+    font-weight: 500;
+    margin: 2vw 0;
+    text-align: left;
+}
+
+table {
+    margin: 0 9.25vw 6vw;
+}
+
+h4 {
+    font-size: 1.5vw;
+    font-weight: 400;
+    color: #646464;
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    font-weight: 400;
+    font-size: 1.4vw;
+    line-height: 1.4;
+}
+
+/******************** About Me Page Styling *********************/
+
+.profile-image {
+    height: 40vw;
+    border-radius: 12px;
+    margin-right: 5vw;
+    width: 35%;
+    overflow: hidden;
+    position: relative;
+}
+
+.profile-pic {
+    display: block;
+    width: auto;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+#aboutText {
+    padding-top: 0;
+}
+
+.button {
+    background-color: #7AC7C3;
+    border: 2px solid #FFFFFF;
+    color: #000000;
+    padding: 1.5vw;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 1vw;
+    border-radius: 10px;
+    margin: 2vw auto;
+    transition-duration: 0.4s;
+    width: 30%;
+}
+
+input.button {
+    margin-right: 7vw;
+    width: 10vw;
+}
+
+.button:hover {
+    background-color: #FFFFFF;
+    border: 2px solid #7AC7C3;
+}
+
+.footer {
+    font-size: .75vw;
+    margin-top: 8%;
+    text-align: center;
+}
+
+.footer p {
+    font-size: .75vw;
+}
+
+.center {
+    margin: auto;
+}
+
+.resumeHeader {
+    height: 4vw;
+}
+
+/************* Contact Page Styling ****************/
+
+#contact-email-icon {
+    background-image: url(Images/mail-icon.svg);
+    background-repeat: no-repeat;
+    width: 7.5vw;
+    height: 5.5vw;
+    margin: 2vw auto;
+}
+
+#contact-phone-icon {
+    background-image: url(Images/phone-icon.svg);
+    background-repeat: no-repeat;
+    width: 7.5vw;
+    height: 5.5vw;
+    margin: 2vw auto;
+}
+
+#contact-location-icon {
+    background-image: url(Images/location-icon.svg);
+    background-repeat: no-repeat;
+    width: 7.5vw;
+    height: 5.5vw;
+    margin: 2vw auto 1vw;
+}
+.contact-card {
+    text-align: center;
+}
+
+form {
+    margin: 15px 0;
+}
+
+#message {
+    background-color: rgba(35, 35, 35, 10%);
+    height: 150px;
+    border-radius: 2px;
+    padding: 5px;
+    margin: 1vw 0;
+    border: 0px;
+    color: rgba(35, 35, 35, 60%);
+    font-size: 1.25vw;
+    resize: vertical;
+    max-height: 500px;
+}
+
+#fname, #lname, #email {
+    background-color: rgba(35, 35, 35, 10%);
+    height: 3vw;
+    border-radius: 2px;
+    padding: 5px;
+    margin: 1vw 1vw 1vw 0;
+    border: 0px;
+    color: rgba(35, 35, 35, 60%);
+    font-size: 1.25vw;
+}
+
+label {
+    display: none;
+}
+
+/************* Work Page Styling ****************/
+
+.work-card {
+    position: relative;
+    height: 25vw;
+    width: 35vw;
+    margin: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.image {
+    display: block;
+    width: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-image: radial-gradient( rgba(0,0,0,.2), rgba(0,0,0,.4));
+}
+
+.text {
+    position: relative;
+    top: 45%;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0;
+}
+
+.work-card:hover .overlay {
+    opacity: 1;
+}
+
+.full-bleed {
+    width: 100%;
+}
+
+.introduction {
+    margin-bottom: 3vw;
+}
+
+figure {
+    position: relative;
+    height: 30vw;
+    overflow: hidden;
+    margin: 3.83vw;
+}
+
+.pro-esports {
+    position: absolute;
+    display: block;
+    width: auto;
+    height: 100%;
+    left: -15vw;
+    top:0;
+}
+
+.video-wrapper {
+    width: 95%;
+    max-width: 1200px;
+    margin: 3vw auto;
+    position: relative;
+}
+.video-container {
+    height: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-bottom: 56.25%;
+    position: relative;
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+}
+
+.video-caption {
+    width: 80%;
+    margin: auto;
+}
+
+.portfolio {
+    margin-bottom: 6vw;
+}
+/************* Mobile Styling ****************/
+
+@media only screen and (max-width: 37.5em) {
+    
+    * {
+        font-family: "Montserrat", sans-serif;
+        box-sizing: border-box;
+    }
+
+    .mobile-resume {
+        width: 80%;
+        margin: 0 10%;
+    }
+    
+    .mobile-work-card {
+        width: 100%;
+    }
+    
+    .image {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: -40%;
+    }
+    
+    .col-1 {
+        display: none;
+    }
+    
+    div.logo {
+        width: 10vw;
+        height: 10vw;
+        float: left;
+    }
+    
+    nav ul li{
+        font-weight: 400;
+        font-size: 2vw;
+        padding: 2em 1em;
+    }
+    
+    #home-text {
+        font-size: 10vw;
+        margin-bottom: 10px;
+    }
+    
+    #index {
+        margin-top: 18vw;
+        text-align: center;
+        font-size: 2vw;
+    }
+    
+    .page-title-mobile {
+        font-size: 7.75vw;
+        font-weight: 300;
+        width: 100%;
+        text-align: center;
+    }
+
+    .page-title::after {
+        display: none;
+    }
+    
+    p {
+        font-size: 2vw;
+        line-height: 1.4;
+        margin: 0;
+    }
+    
+    .subtext-mobile {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+    
+    #title-subtext-work {
+        margin: 0;
+    }
+    
+    #title-subtext-resume {
+        margin: 0;
+    }
+    
+    h2 {
+        font-size: 4vw;
+    }
+
+    h3 {
+        font-size: 3vw;
+    }
+    
+    h4 {
+        font-size: 2vw;
+        margin: 0 0 10px 0;
+    }
+    
+    th {
+        font-size: 3vw;
+    }
+
+    td.resume {
+        font-size: 2vw;
+        line-height: 1.3;
+        padding: 0;
+    }
+
+    caption {
+        font-size: 4vw;
+        margin: 20px 0;
+    }
+    
+    .mobile-resume-bottom {
+        width: 40%;
+        margin: 0 0 0 30px;
+    }
+    
+    .page-title-other {
+        text-align: center;
+    }
+    
+    .profile-image {
+        display: none;
+    }
+    
+    #aboutText {
+        width: 100%;
+        padding: 30px;
+    }
+}
