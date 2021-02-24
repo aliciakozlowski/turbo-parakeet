@@ -1,13 +1,11 @@
 * {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Nunito", sans-serif;
     box-sizing: border-box;
 }
 
 /********* Responsive Grid Sizing ***************/
 
 body {
-    margin-left: 4%;
-    margin-right: 4%;
     background-color: #FFFFFF;
 }
 
@@ -64,32 +62,43 @@ header {
 }
 
 .logo {
-    background-image: url(Images/logo-color.svg);
-    background-repeat: no-repeat;
-}
-
-.logo:hover {
     background-image: url(Images/logo-line.svg);
     background-repeat: no-repeat;
 }
 
+header.project {
+    position: absolute;
+}
+
 div.logo {
-    width: 5.5vw;
-    height: 5.5vw;
+    width: 3vw;
+    height: 3vw;
     float: left;
-    margin: 1em;
+    margin: 1.45em;
 }
 
 nav {
     float: right;
+    z-index: 1;
+}
+
+nav.project {
+    position: fixed;
+    right: 0;
 }
 
 nav ul li{
     list-style-type: none;
     display:inline-block;
-    font-weight: 400;
-    font-size: 1vw;
-    padding: 1.45em;
+    font-weight: 200;
+    font-size: 1.2vw;
+    padding: 1.25em;
+}
+
+.full-bleed {
+    margin: 0;
+    display: block;
+    z-index: -1;
 }
 
 /********** Link Styling ****************/
@@ -101,19 +110,6 @@ a.navDark:link {
 
 a.navDark:visited {
     color: #000000;
-}
-
-a.navWhite:link {
-    color: #FFFFFF;
-    text-decoration: none;
-}
-
-a.navWhite:visited{
-    text-decoration: none;
-    display:inline-block;
-    font-weight: 400;
-    font-size: 1vw;
-    color: #FFFFFF;
 }
 
 a.click:link {
@@ -130,10 +126,6 @@ a.navDark:hover, a.click:hover, a.navWhite:hover{
     color: #F73959;
 }
 
-a.navDark:active, a.click:active, a.navWhite:active{
-    color: #7AC7C3;
-}
-
 a.company:link, a.company:visited {
     color: #F73959;
     text-decoration: none;
@@ -142,10 +134,6 @@ a.company:link, a.company:visited {
 a.company:hover {
     color: #F73959;
     text-decoration: underline;
-}
-
-a.company:active {
-    color: #7AC7C3;
 }
 
 a.overlay:link {
@@ -157,21 +145,49 @@ a.overlay:visited {
     text-decoration: none;
 }
 
+a.active {
+    font-weight: 600;
+}
+
 /************* Home Page Styling ******************/
 
+
 #home-text {
-    font-size: 8vw;
+    font-size: 3em;
     font-weight: 500;
     margin: 0;
-    margin-bottom: 30px;
+}
+
+#pronounciation {
+    display: none;
+    font-weight: 200;
+    font-size: .4em;
+    z-index: 2;
+    position: fixed;
+    transform: translateX(0, 80px);
+    transition: .5s ease;
+}
+
+#name:hover #pronounciation {
+    opacity: 1;
+    display: inline-block;
+    transform: translateX(0, 80px);
+    transition: .5s ease;
 }
 
 #home-div {
-    margin-top: 7em;
+    margin: 8em 0;
+    text-align: center;
+}
+
+.description {
+    font-size: 1.2em;
+    font-weight: 200;
+    margin: 0 10em;
 }
 
 .text_1, .text_2, .text_3 {
-    font-size: 8vw;
+    font-size: 2.5vw;
     font-weight: 500;
     color: #FFCECE;
     display: inline-block;
@@ -241,11 +257,6 @@ a.overlay:visited {
     20%, 80% {
         opacity: 1;
     }
-}
-
-body.home {
-    background-color: #353535;
-    color: #FFFFFF; 
 }
 
 #index {
@@ -358,15 +369,19 @@ p {
     line-height: 1.4;
 }
 
+#space {
+    margin: 4em;
+}
 /******************** About Me Page Styling *********************/
 
 .profile-image {
-    height: 40vw;
-    border-radius: 12px;
-    margin-right: 5vw;
-    width: 35%;
+    height: 33em;
+    border-radius: 20px;
+    margin-left: 4em;
+    width: 24em;
     overflow: hidden;
     position: relative;
+    box-shadow:  5px 5px 25px #d0d0d0;
 }
 
 .profile-pic {
@@ -376,6 +391,16 @@ p {
     height: 100%;
     top: 0;
     left: 0;
+}
+
+.body-text {
+    font-weight: 200;
+    font-size: 1.2em;
+}
+
+.intro {
+    font-weight: 500;
+    font-size: 3em;
 }
 
 #aboutText {
@@ -425,77 +450,24 @@ input.button {
     height: 4vw;
 }
 
-/************* Contact Page Styling ****************/
-
-#contact-email-icon {
-    background-image: url(Images/mail-icon.svg);
-    background-repeat: no-repeat;
-    width: 7.5vw;
-    height: 5.5vw;
-    margin: 2vw auto;
-}
-
-#contact-phone-icon {
-    background-image: url(Images/phone-icon.svg);
-    background-repeat: no-repeat;
-    width: 7.5vw;
-    height: 5.5vw;
-    margin: 2vw auto;
-}
-
-#contact-location-icon {
-    background-image: url(Images/location-icon.svg);
-    background-repeat: no-repeat;
-    width: 7.5vw;
-    height: 5.5vw;
-    margin: 2vw auto 1vw;
-}
-.contact-card {
-    text-align: center;
-}
-
-form {
-    margin: 15px 0;
-}
-
-#message {
-    background-color: rgba(35, 35, 35, 10%);
-    height: 150px;
-    border-radius: 2px;
-    padding: 5px;
-    margin: 1vw 0;
-    border: 0px;
-    color: rgba(35, 35, 35, 60%);
-    font-size: 1.25vw;
-    resize: vertical;
-    max-height: 500px;
-}
-
-#fname, #lname, #email {
-    background-color: rgba(35, 35, 35, 10%);
-    height: 3vw;
-    border-radius: 2px;
-    padding: 5px;
-    margin: 1vw 1vw 1vw 0;
-    border: 0px;
-    color: rgba(35, 35, 35, 60%);
-    font-size: 1.25vw;
-}
-
-label {
-    display: none;
-}
-
 /************* Work Page Styling ****************/
 
 .work-card {
     position: relative;
-    height: 25vw;
-    width: 35vw;
+    height: 30vw;
+    width: 30vw;
     margin: 10px;
-    border-radius: 5px;
+    border-radius: 15px;
     overflow: hidden;
     text-align: center;
+    box-shadow:  5px 5px 25px #d0d0d0;
+}
+
+.work-card:hover {
+    box-shadow:  5px 5px 35px #d0d0d0;
+    transform: translate(0, -30px, 2);
+    transform: scale(1.01);
+    transition: .25s ease;
 }
 
 .image {
@@ -517,7 +489,6 @@ label {
     width: 100%;
     opacity: 0;
     transition: .5s ease;
-    background-image: radial-gradient( rgba(0,0,0,.2), rgba(0,0,0,.4));
 }
 
 .text {
@@ -593,17 +564,24 @@ figure {
 @media only screen and (max-width: 37.5em) {
     
     * {
-        font-family: "Montserrat", sans-serif;
+        font-family: "Nunito", sans-serif;
         box-sizing: border-box;
     }
 
+    .mobile-description {
+        margin: 1em;
+        font-size: 1em;
+    }
+    
     .mobile-resume {
         width: 80%;
         margin: 0 10%;
     }
     
     .mobile-work-card {
-        width: 100%;
+        width: 80%;
+        height: 8em;
+        margin: 1em 10%;
     }
     
     .image {
@@ -613,25 +591,25 @@ figure {
         top: -40%;
     }
     
-    .col-1 {
-        display: none;
-    }
-    
     div.logo {
-        width: 10vw;
-        height: 10vw;
+        width: 5vw;
+        height: 5vw;
         float: left;
     }
     
     nav ul li{
-        font-weight: 400;
-        font-size: 2vw;
+        font-weight: 200;
+        font-size: .5em;
         padding: 2em 1em;
     }
     
     #home-text {
-        font-size: 10vw;
-        margin-bottom: 10px;
+        font-size: 2.5em;
+    }
+    
+    #home-div {
+        margin: 4em 0;
+        text-align: center;
     }
     
     #index {
