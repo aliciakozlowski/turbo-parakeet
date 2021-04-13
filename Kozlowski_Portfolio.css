@@ -149,6 +149,22 @@ a.active {
     font-weight: 600;
 }
 
+#slides {
+    font-family: "Source Sans Pro";
+    font-style: italic;
+    color: #000000;
+    font-weight: 300;
+}
+
+a.navWhite:link {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+a.navWhite:visited {
+    color: #FFFFFF;
+}
+
 /************* Home Page Styling ******************/
 
 
